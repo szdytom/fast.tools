@@ -9,7 +9,7 @@
 
 <script>
 
-document.addEventListener('click', () => {
+document.getElementById('commit').addEventListener('click', () => {
     const mod = bigInt(document.getElementById('mod').value);
     const target = bigInt(document.getElementById('target').value);
     const res = target.modInv(mod);
