@@ -1,9 +1,11 @@
 <head>
-    <title>Multiplicative Inverse | Fast.Tools</title>
+    <title>Fast Power | Fast.Tools</title>
 </head>
 
-<label for=target>Target: </label>
-<input id=target />
+<label for=base>Base: </label>
+<input id=base />
+<label for=exp>Exponent: </label>
+<input id=exp />
 <label for=mod>Modulo: </label>
 <input id=mod />
 <input id=commit type=button value=Calculate />
@@ -13,9 +15,13 @@
 
 <script>
 
-function getResult(target, mod) {
+function getResult(base, exp, mod) {
     try {
-        return target.modInv(mod).toString();
+        if (mod == '' || mod == undefined || mod == null || mod == 0) {
+            return bigInt(base).pow(exp).toString();
+        } else {
+            return bigInt(base).modPow(exp, bigInt(mod)).toString();
+        }
     } catch(err) {
         return `<span class=error>${err.toString()}</span>`;
     }
@@ -23,8 +29,9 @@ function getResult(target, mod) {
 
 document.getElementById('commit').addEventListener('click', () => {
     const mod = bigInt(document.getElementById('mod').value);
-    const target = bigInt(document.getElementById('target').value);
-    const res = getResult(target, mod)
+    const base = document.getElementById('base').value;
+    const exp = bigInt(document.getElementById('exp').value);
+    const res = getResult(base, exp, mod)
     document.getElementById("answer").innerHTML = res;
 });
 
