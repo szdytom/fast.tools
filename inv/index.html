@@ -9,10 +9,18 @@
 
 <script>
 
+function getResult(target, mod) {
+    try {
+        return target.modInv(mod).toString();
+    } catch(err) {
+        return err.toString();
+    }
+}
+
 document.getElementById('commit').addEventListener('click', () => {
     const mod = bigInt(document.getElementById('mod').value);
     const target = bigInt(document.getElementById('target').value);
-    const res = target.modInv(mod);
+    const res = getResult(target, mod)
     document.getElementById("answer").innerHTML = res;
 });
 
