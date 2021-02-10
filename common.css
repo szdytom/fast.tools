@@ -14,3 +14,8 @@ input[type=button] {
 .result {
     font-size: xx-large;
 }
+
+.error {
+    color: red;
+    font-size: larger;
+}
