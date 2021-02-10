@@ -12,10 +12,10 @@ input[type=button] {
 }
 
 .result {
-    font-size: xx-large;
+    font-size: larger;
 }
 
 .error {
     color: red;
-    font-size: larger;
+    font-size: large;
 }
