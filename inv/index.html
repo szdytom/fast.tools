@@ -1,0 +1,21 @@
+<label for=target>Target: </label>
+<input id=target />
+<label for=target>Mod: </label>
+<input id=mod />
+<input id=commit type=button value=Calculate />
+<p class=result>Result: <span id=answer></span></p>
+
+<script src="https://cdn.jsdelivr.net/gh/peterolson/BigInteger.js@v1.6.40/BigInteger.min.js"></script>
+
+<script>
+
+document.addEventListener('click', () => {
+    const mod = bigInt(document.getElementById('mod').value);
+    const target = bigInt(document.getElementById('target').value);
+    const res = target.modInv(mod);
+    document.getElementById("answer").innerHTML = res;
+});
+
+</script>
+
+<style>@import url("/common.css");</style>

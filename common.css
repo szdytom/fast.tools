@@ -1,0 +1,16 @@
+input {
+    display: block;
+    min-width: 500px;
+    min-height: 30px;
+    font-family: monospace;
+    font-size: large;
+    margin-bottom: 10px;
+}
+
+input[type=button] {
+    padding: auto;
+}
+
+.result {
+    font-size: xx-large;
+}
