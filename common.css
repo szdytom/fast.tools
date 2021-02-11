@@ -1,10 +1,15 @@
-input {
+input, textarea {
     display: block;
     min-width: 500px;
     min-height: 30px;
     font-family: monospace;
     font-size: large;
     margin-bottom: 10px;
+}
+
+textarea {
+    min-width: 500px;
+    min-height: 200px;
 }
 
 input[type=button] {
@@ -20,6 +25,8 @@ input[type=button] {
     font-size: large;
 }
 
-iframe {
-    border: none;
+#common {
+    display: block;
+    margin-bottom: 30px;
+    width: 100%;
 }

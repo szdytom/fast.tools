@@ -1,0 +1,28 @@
+<head>
+    <title>Base64 Encode | Fast.Tools</title>
+</head>
+<div id=common></div>
+
+<label for=source>Source: </label>
+<textarea id=source autocapitalize=none autocomplete=auto placeholder="Paste your data here..."></textarea>
+<label for=res>Result: </label>
+<textarea id=res readonly></textarea>
+<input id=commit type=button value=Calculate />
+
+<script src="../js/page.js"></script>
+
+<script>
+
+function getResult(source) {
+    return btoa(source);
+}
+
+document.getElementById('commit').addEventListener('click', () => {
+    const source = document.getElementById('source').value;
+    const res = getResult(source);
+    document.getElementById('res').value = res;
+});
+
+</script>
+
+<style>@import url("../common.css");</style>
